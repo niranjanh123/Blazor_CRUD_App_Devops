@@ -1,0 +1,41 @@
+﻿@page "/server/edit/{id:int}"
+
+@inject NavigationManager NavigationManager
+
+<h3>EditServer</h3>
+<br/>
+
+<EditForm Model="server" FormName="editSumbit" OnValidSubmit="Submit">
+    <DataAnnotationsValidator>
+    </DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <InputNumber @bind-Value="server.ID" hidden></InputNumber>
+    <InputText @bind-Value="server.Name"></InputText>
+    <InputText @bind-Value="server.Location"></InputText>
+    <InputCheckbox @bind-Value="server.status"></InputCheckbox>
+    <button class="btn btn-primary" type="submit"> Update</button>
+    &nbsp;
+    <a href="/server" class="btn btn-primary">Back</a>
+</EditForm>
+<br/>
+<br/>   
+
+
+@code {
+    [Parameter]
+    public int Id { get; set; }
+
+    [SupplyParameterFromForm]
+    private Server server { get; set; }
+    protected override void OnParametersSet()
+    {
+        server ??= ServerRepository.GetServerById(Id);
+    }
+
+    private void Submit()
+    {
+        ServerRepository.UpdateServer(server.ID, server);
+       // NavigationManager.NavigateTo("/server",true);
+       // NavigationManager.NavigateTo("/server",true);
+    }
+}

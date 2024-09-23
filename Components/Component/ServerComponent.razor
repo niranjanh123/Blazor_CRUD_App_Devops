@@ -1,0 +1,53 @@
+﻿@page "/server"
+@attribute [StreamRendering]
+
+<PageTitle>ServerPage</PageTitle>
+
+@if (servers == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <a href="/server/add" class="btn btn-primary">Add Server</a>
+    <br/>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var server in servers)
+            {
+                <tr>
+                    <td>@server.Name</td>
+                    <td>@server.Location</td>
+                    <td>@server.status</td>
+                    <td><a href="/server/edit/@server.ID" class="btn btn-link">Edit</a></td>
+                    <td>
+                        <EditForm Model="server"
+                            FormName="@($"form-server={server.ID}")"
+                        OnValidSubmit="@(() => { DeleteServer(server.ID);})">
+                            <button type="submit">Delete</button>
+                        </EditForm>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Server> servers = ServerRepository.GetServers();
+
+    private void DeleteServer(int ID)
+    {
+        if (ID > 0)
+        {
+            ServerRepository.DeleteServer(ID);
+        }
+    }
+}

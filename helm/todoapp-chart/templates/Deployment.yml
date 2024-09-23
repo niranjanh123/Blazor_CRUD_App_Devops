@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blazor-todo-app
+  labels:
+    app: blazor-todo-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blazor-todo-app
+  template:
+    metadata:
+      labels:
+        app: blazor-todo-app
+    spec:
+      containers:
+      - name: blazor-todo-app
+        image: niranjanhari/blazor_todo_app:{{ .Values.image.tag }}
+        ports:
+        - containerPort: 80

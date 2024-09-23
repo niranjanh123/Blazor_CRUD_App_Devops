@@ -1,0 +1,33 @@
+﻿@page "/server/add"
+@inject NavigationManager NavigationManager
+
+<h3>AddServerComponent</h3>
+
+<EditForm Model="server" FormName="addForm" OnValidSubmit="Submit">
+    <DataAnnotationsValidator>
+    </DataAnnotationsValidator>
+    <ValidationSummary></ValidationSummary>
+    <InputText @bind-Value="server.Name"></InputText>
+    <InputText @bind-Value="server.Location"></InputText>
+    <InputCheckbox @bind-Value="server.status"></InputCheckbox>
+    <button type="submit" class="btn btn-primary">Add</button>
+    &nbsp;
+    <a href="/server" class="btn btn-primary">Back</a>
+
+</EditForm>
+
+@code {
+
+    [SupplyParameterFromForm]
+    private Server server { get; set; } = new Server();
+
+    private void Submit()
+    {
+        if (server != null)
+        {
+            ServerRepository.AddServer(server);
+            //NavigationManager.NavigateTo("/server");
+        }
+    }
+
+}
