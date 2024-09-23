@@ -34,7 +34,7 @@ jobs:
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}
 
     - name: Upload artifact for deployment job#Reference a specific upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v4
 
       with:
         name: .net-apps
