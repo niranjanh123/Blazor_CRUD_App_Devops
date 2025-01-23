@@ -212,3 +212,13 @@ Give it an ID (e.g., github) and a description, then click OK.
 
 ## The CD part will be updated soon! ##
 I'm always open to collaboration! Let's learn and innovate together.
+
+---
+## Images of the CI process ##
+
+
+![CICD Server App](https://github.com/user-attachments/assets/6019babe-ea7c-4dfb-8b0c-da257567ab93)
+![CICD Jenkins](https://github.com/user-attachments/assets/e31203dc-a350-4f61-9c8d-533d2af044e9)
+![CICD DockerHub](https://github.com/user-attachments/assets/3095371b-0276-4400-a32f-6f0e28f69ae8)
+![CICD Jenkins_New](https://github.com/user-attachments/assets/9b417b34-41a7-48eb-9f57-c23a591c0ec7)
+![CICD Sonar](https://github.com/user-attachments/assets/fcbbe0e6-b015-4c17-a435-4d85873ebd20)
