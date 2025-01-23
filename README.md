@@ -13,5 +13,11 @@ Tools used for CI part:
 3. Docker/Docker Hub
 4. Trivy
 5. Sonar
+6. Ec2/Local Machine
 
 The below Workflow diagram will give you an idea of how the CI part of the application works.
+
+![DevOPS drawio](https://github.com/user-attachments/assets/cf735941-2764-49e2-bedc-aec147425798)
+
+
+
