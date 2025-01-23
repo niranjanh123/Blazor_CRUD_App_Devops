@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   todoapp:
-    image: niranjanhari123/blazorservertodoapp:1.0.0
+    image: niranjanhari/blazorservertodoapp:1.0.0
     ports:
       - "8089:8080"
       - "8090:8081"
