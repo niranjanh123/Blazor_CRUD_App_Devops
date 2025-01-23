@@ -2,9 +2,7 @@ version: '3.8'
 
 services:
   todoapp:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: niranjanhari123/blazorservertodoapp:1.0.0
     ports:
       - "8080:8080"
       - "8081:8081"
