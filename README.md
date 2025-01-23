@@ -204,7 +204,7 @@ Give it an ID (e.g., github) and a description, then click OK.
 
 - You can now click on the Job you created **CICD** and click on **Build Now** option the left side.
 - You should be able to see the pipeline running. In case if there are any errors try to fix the issue as part of the learning curve or feel free to reach out to me.
-- Issues might be casued due these probable reasons: 1
+- Issues might be casued due these probable reasons:
   - The Docker Image tag that you have selected is wrong.
   - The Token you have generated might have expired.
 
