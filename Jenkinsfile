@@ -70,14 +70,6 @@ pipeline {
                 //echo "App deployed to AWS!"
             }
         }
-         stage("Deploy on Minikube") {
-            steps {
-                 sh "minikube status"
-                 echo "Minikube running!!"
-            }
-        }
-
-
-        
+            
     }
 }
